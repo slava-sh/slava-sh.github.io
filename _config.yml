@@ -1,11 +1,28 @@
-# Site settings
 title: Home
 email: shk.slava@gmail.com
-description: > # this means to ignore newlines until "baseurl:"
+description: > # ignore newlines
   Write an awesome description for your new site here. You can edit this
   line in _config.yml. It will appear in your document head meta (for
   Google search results) and in your feed.xml site description.
 github_username: slava-sh
 
-# Build settings
-markdown: kramdown
+permalink: /:title/
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+
+defaults:
+  - scope:
+      type: posts
+    values:
+      layout: post
+  - scope:
+      type: drafts
+    values:
+      layout: post
+
+# These are set by GitHub and cannot be overridden
+# https://help.github.com/articles/using-jekyll-with-pages/#configuration-overrides
+safe: true
+lsi: false
